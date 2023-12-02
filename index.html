@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <title>Meme Generator</title>
+</head>
+
+<body class="main-layout" onload="onInit()">
+  <!-- HEADER SECTION -->
+  <section class="main-header flex space-between align-center full">
+    <img src="assets/images/logo/memegen-logo.png" alt="" class="logo" />
+    <div class="search-line flex">
+      <input type="text" list="keywordsData" oninput="onKeyword(this.value)" placeholder="Search">
+      <datalist id="keywordsData"></datalist>
+   </div>
+    <div class="links">
+      <ul class="main-nav-list flex clean-list">
+        <li class="gallery-page active"><a onclick="navigateTo('gallery')" href="#">Gallery</a></li>
+        <li class="editor-page"><a href="#">Editor</a></li>
+        <li class="saved-page"><a onclick="navigateTo('saved')" href="#">Saved</a></li>
+        <li class="about-page"><a onclick="navigateTo('about')" href="#">About</a></li>
+      </ul>
+      
+    </div>
+  </section>
+
+  <!-- ASIDE SECTION -->
+  <section class="aside-container flex justify-center">
+    <ul class="aside-nav-list clean-list aside-page"></ul>
+  </section>
+
+  <!-- GALLERY VIEW SECTION -->
+  <section class="gallery-container gallery-layout"></section>
+
+  <!-- EDITOR SECTION -->
+  <section class="editor-container editor flex justify-center align-center hide">
+    <!-- CANVAS -->
+    <div class="canvas-container">
+      <canvas width="500" height="500" id="my-canvas"></canvas>
+    </div>
+
+    <div class="canvas-actions flex column space-between">
+      <div class="main-actions">
+        <!-- Top Section, Actions -->
+        <div class="edit-text flex space-between align-center">
+          <h2 class="edit-text-title">Edit Text Lines</h2>
+          <div class="edit-text-actions flex align-center">
+            <h3 class="lines-count"></h3>
+            <button class="switchline" onclick="onSwitchLine()">
+              <i class="fa-solid fa-shuffle"></i>
+            </button>
+            <button class="addline" onclick="onAddLine()">
+              <i class="fa-regular fa-square-plus"></i>
+            </button>
+            <button class="removeline" onclick="onDeleteLine()">
+              <i class="fa-regular fa-square-minus"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="text-actions flex space-evenly">
+          <!-- Font Family are rendered though JS -->
+          <div class="font-family"></div>
+          <!-- Font Sizes are rendered though JS -->
+          <div class="font-size"></div>
+
+          <!-- TEXT ALIGN SERVICE -->
+          <div class="align-text">
+            <button title="Align Left" onclick="onSetAlign('left')" class="btn-align-left">
+              <i class="fa-solid fa-align-left"></i>
+            </button>
+            <button title="Align Center" onclick="onSetAlign('center')" class="btn-align-center">
+              <i class="fa-solid fa-align-center"></i>
+            </button>
+            <button title="Align Right" onclick="onSetAlign('right')" class="btn-align-right">
+              <i class="fa-solid fa-align-right"></i>
+            </button>
+          </div>
+
+          <!-- SHAPE SERVICE -->
+          <div class="shape">
+            <button onclick="onToggleStroke()" class="stroke-toggle">
+              <i class="fa-solid fa-font"></i>
+            </button>
+            <button onclick="openColorPallete()" class="color-pallete">
+              <i class="fa-solid fa-paintbrush"></i>
+            </button>
+          </div>
+
+          <!-- End of Text Actions -->
+        </div>
+
+        <!-- Add / Change text  -->
+        <div class="text-input">
+          <input type="text" placeholder="Enter a text" oninput="onSetText(this.value)" />
+        </div>
+
+        <!-- End of Add/Change text -->
+
+        <div class="stickers flex justify-center">
+          <h2>Stickers</h2>
+          <div class="stickers-container"></div>
+        </div>
+
+        <!-- Download, Share, Save Actions -->
+        <!-- End of canvas actions -->
+      </div>
+      <div class="download-save-share flex space-between align-end">
+        <button>
+          <a href="#" class="btn" onclick="onDownloadMeme(this)" download="my-img.jpg">Download</a>
+        </button>
+        <button class="save" onclick="onSaveMeme()">
+          Save
+        </button>
+        <button class="share" onclick="onUploadMeme(this)">
+          Share
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAVED SECTION -->
+  <section class="saved-container hide"></section>
+  <img class="test-img" />
+  <!-- ABOUT SECTION -->
+  <section class="about-container hide"></section>
+
+  <!-- FOOTER SECTION -->
+  <section class="footer footer-layout flex justify-center align-center full">
+    Made without ❤️ by Eden Spivak
+  </section>
+
+  <!-- JAVASCRIPT SECTION -->
+  <script src="https://kit.fontawesome.com/1206d36ae0.js" crossorigin="anonymous"></script>
+
+  <script src="js/services/storage.service.js"></script>
+  <script src="js/services/upload.service.js"></script>
+  <script src="js/services/gallery.service.js"></script>
+  <script src="js/services/meme.service.js"></script>
+  <script src="js/controllers/main.controller.js"></script>
+  <script src="js/controllers/gallery-controller.js"></script>
+  <script src="js/controllers/saved.controller.js"></script>
+  <script src="js/controllers/editor.controller.js"></script>
+  <script src="js/controllers/meme.controller.js"></script>
+</body>
+
+</html>

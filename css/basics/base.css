@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: roboto-regular;
+  background-color: #F8F8F8;
+  color: var(--ClrPriamyText);
+  line-height: 1.714;
+  /* overflow-x: hidden; */
+  overflow-y: hidden;
+}
+
+body {
+  margin: 0;
+  height: 100dvh;
+  font-size: 0.875rem;
+}
+
+button {
+  all:unset;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  height: 25px;
+  width: 25px;
+}
+
+main {
+  height: 100%;
+}
+img {
+  width: 100%;
+}
+
+a {
+  color: var(--Primary-1)
+}
+
+p {
+  margin: 0 0 1em;
+}

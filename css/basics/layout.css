@@ -1,0 +1,44 @@
+/* MAIN LAYOUT */
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  grid-auto-rows: minmax(auto, 1fr);
+  /* height: 100dvh; */
+}
+
+.main-layout > *.full {
+  grid-column: 1 / -1;
+} 
+
+.main {
+  grid-column: 1 / -1;
+}
+
+
+/* SIDE BAR LAYOUT */
+.aside-bar {
+  grid-column: 1;
+  /* height: 100dvh; */
+
+}
+
+
+/* GALLERY LAYOUT */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  align-content: flex-start;
+  height: calc(100vh - 128px);
+  gap: 8px;
+  overflow-y: scroll;
+}
+
+.saved-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  align-content: flex-start;
+  height: calc(100vh - 128px);
+  gap: 8px;
+  /* overflow-y: scroll; */
+}

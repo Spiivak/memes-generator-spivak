@@ -1,0 +1,9 @@
+.canvas-container {
+  padding: 32px;
+}
+
+
+canvas {
+  background-color: #fff;
+  border-radius: 24px;
+}

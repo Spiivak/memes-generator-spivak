@@ -1,0 +1,16 @@
+.aside-container {
+  background-color: #fff;
+  box-shadow: 1px 0px 0px 0px rgba(219, 219, 219, 1);
+  padding: 16px;
+  z-index: 3;
+}
+
+.aside-nav-list li {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.aside-nav-list li:hover {
+  color: orange;
+
+}
