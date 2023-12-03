@@ -39,7 +39,7 @@
   }
 }
 
-@media only screen and (max-width: 805) {
+@media only screen and (max-width: 805px) {
   .gallery-container { 
     padding: 32px;
     height: calc(100dvh + 300px);
