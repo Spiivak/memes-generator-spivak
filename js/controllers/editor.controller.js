@@ -1,6 +1,5 @@
 'use strict'
 
-const fontSizes = [10, 12, 11, 13, 14, 15, 16, 20, 24, 32, 36, 40, 48, 64, 96, 128]
 
 
 function initEditor() {
@@ -10,16 +9,17 @@ function initEditor() {
 }
 
 function renderFontSize(){
-   document.querySelector('.font-size').innerHTML = `
-    <select name="font-size" id="font-size" onchange="onSetFontSize()">
-      ${fontSizes.map(size => `<option value="${size}">${size}</option>`).join('')}
-    </select>
-  `
-  }
+  const fontSizes = [10, 12, 11, 13, 14, 15, 16, 20, 24, 32, 36, 40, 48, 64, 96, 128]
 
-function renderFontFamilySelect() {
-  const fontSelect = document.querySelector('.font-family')
-  console.log('fontSelect', fontSelect)
+   document.querySelector('.font-size').innerHTML = `
+   <select name="font-size" id="font-size" onchange="onSetFontSize()">
+   ${fontSizes.map(size => `<option value="${size}">${size}</option>`).join('')}
+   </select>
+   `
+  }
+  
+  function renderFontFamilySelect() {
+    const fontSelect = document.querySelector('.font-family')
 
   // List of predefined web-safe fonts
   const availableFonts = [
@@ -32,10 +32,8 @@ function renderFontFamilySelect() {
     'Geneva',
     'Tahoma',
     'impact',
-    // Add more fonts as needed
   ]
 
-  // Create options and append them to the select element
   let fontOptionsHTML = availableFonts
     .map(font => `<option value="${font.toLowerCase()}">${font}</option>`)
     .join('')
@@ -49,8 +47,10 @@ function renderFontFamilySelect() {
   fontSelect.innerHTML = fontSelectHTML
 }
 
+
 function onSetText(txt){
   setLineTxt(txt)
+  document.querySelector('.new-text-box').value = getSelectedLine().txt
   renderMeme()
 }
 
@@ -61,19 +61,24 @@ function onSetColor(color){
 
 function onSetFontSize() {
   const size = document.getElementById('font-size').value
+  showModal('success', `Font size changed to ${size}px`)
   setFontSize(size)
   renderMeme()
 }
 
 function onSwitchLine(){
   switchLine()
+  document.querySelector('.new-text-box').value = getSelectedLine().txt
+  
   displayLinesCount()
   renderMeme()
+  // showModal('success', `Switched to line ${getSelectedLineIdx() + 1}`)
 }
 
 function onSetFontFamily(fontFamily){
   setFontFamily(fontFamily)
   renderMeme()
+  showModal('success', `Font Family changed to ${fontFamily}`)
 }
 
 function onSetAlign(align){
@@ -83,12 +88,15 @@ function onSetAlign(align){
 
 function onAddLine(){
   addLine()
+  showModal('success', `Successfully added a new line`)
   displayLinesCount()
+  document.querySelector('.new-text-box').value = getSelectedLine().txt
   renderMeme()
 }
 
 function onDeleteLine(){
   deleteLine()
+  showModal('success', `Successfully deleted a line`)
   displayLinesCount()
   renderMeme()
 }
@@ -97,10 +105,16 @@ function onToggleStroke() {
   const meme = getMeme()
   const selectedLine = meme.lines[meme.selectedLineIdx]
 
-  // Toggle the value of the stroke property
   selectedLine.stroke = !selectedLine.stroke
 
-  // Render the meme to reflect the changes
+  if (!selectedLine.stroke) {
+    showModal('success', `Added Stroke`)
+  } else {
+
+    showModal('success', `Removed Stroke`)
+  }
+
+
   renderMeme()
 }
 
@@ -110,6 +124,7 @@ function onDownloadMeme(elLink){
   const data = gElCanvas.toDataURL()
   elLink.href = data
   elLink.download = 'my-meme.jpg'
+  showModal('success', `Successfully downloaded the meme`)
 }
 
 function onUploadMeme() {
@@ -123,6 +138,7 @@ function onSaveMeme() {
   renderMeme()
   const MemeData = gElCanvas.toDataURL()
   saveMeme(MemeData)
+  showModal('success', `Successfully saved the meme`)
   navigateTo('saved')
   renderSaved()
 }
@@ -133,6 +149,7 @@ function openColorPallete() {
 
   colorInput.addEventListener('input', function() {
     onSetColor(colorInput.value)
+    showModal('success', `Successfully changed the color`)
   })
 
   colorInput.click()

@@ -15,19 +15,22 @@ function renderGallery(keyword) {
     return `<img class="gallery-img" src="assets/images/memes/${img.id}.jpg" onclick="onSelectImg(${img.id})">`
   })
 
+
   if (!imgs.length) imgsHTMLs = ['<p>No results found...</p>']
   imgsHTMLs.unshift(`<div class="upload-card file-input flex justify-center align-center">
-  <button class="upload-image"><i class="fa-solid fa-plus"></i></button>
+  <button onclick="createUploadButton()" class="upload-image"><i class="fa-solid fa-plus"></i></button>
 </div>`)
 
   document.querySelector('.gallery-layout').innerHTML = imgsHTMLs.join('')
+  document.querySelector('.search-box').placeholder = `Search ${imgs.length} memes`
 
   if (!keyword) document.querySelector('.search-box').value = ''
 
 }
 
+
 function renderKeywords() {
-  const keywordsSet = getKeywords();
+  const keywordsSet = getKeywords()
   let datalistHTMLs = '<select onchange="onKeyword(this.value)"><option value="">All</option>'
 
   keywordsSet.forEach(keyword => {
@@ -42,7 +45,6 @@ function renderKeywords() {
 function onKeyword(keyword) {
   updateKeywordCount(keyword)
   document.querySelector('.search-box').value = keyword
-  renderKeywords()
   renderGallery(keyword)
 }
 
@@ -56,16 +58,25 @@ function onImgInput(ev) {
   loadImageFromInput(ev, DrawUploadedImg)
 }
 function DrawUploadedImg(img) {
-  document.querySelector('.test-img').src = img.src
   onImgSelect(0)
+  drawImageOnCanvas(img)
 }
+
+function drawImageOnCanvas(img) {
+  gElCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
+  gElCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
+
+  navigateTo('editor')
+  renderMeme()
+}
+
 function loadImageFromInput(ev, onImageReady) {
   var reader = new FileReader()
 
   reader.onload = (event) => {
-     var img = new Image()
-     img.onload = onImageReady.bind(null, img)
-     img.src = event.target.result
+    var img = new Image()
+    img.onload = onImageReady.bind(null, img)
+    img.src = event.target.result
   }
   reader.readAsDataURL(ev.target.files[0])
 }

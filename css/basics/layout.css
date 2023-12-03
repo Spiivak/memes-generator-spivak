@@ -4,31 +4,36 @@
   display: grid;
   grid-template-columns: 120px 1fr 120px;
   grid-template-rows: auto 1fr auto;
-  /* overflow-y: hidden; */
 }
 
 .main-layout > *.full {
   grid-column: 1 / -1;
 }
 
-
 .editor-container {
-  /* display: grid; */
-  grid-column: 1 / -1;
+  grid-column: 2;
+  max-height: calc(100vh - 110px);
 }
+
 /* GALLERY LAYOUT */
+
+.gallery-container {
+  max-height: calc(100vh - 110px);
+  grid-column: 2;
+  /* overflow-y: auto; */
+}
+
 .gallery-layout {
-  grid-column: 1 / span -1;
+  grid-column: 2;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 8px;
 }
 
 .saved-container {
-  grid-column: 1 / span -1;
+  grid-column: 2;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   align-content: flex-start;
-  /* height: calc(100vh - 128px); */
   gap: 8px;
 }

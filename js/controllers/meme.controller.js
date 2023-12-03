@@ -23,8 +23,8 @@ function initMeme(imgId) {
 }
 
 function setCanvasHeight(imgId) {
-  const elTestImg = document.querySelector('.test-img')
-  elTestImg.style.display = 'inline'
+  // const elTestImg = document.querySelector('.test-img')
+  // elTestImg.style.display = 'inline'
   if (imgId) {
     const imgSrc = getElImgById(imgId).src
     elTestImg.src = imgSrc
@@ -56,13 +56,15 @@ function onDown(ev) {
   const pos = getEvPos(ev)
   const clickedLineIdx = isLineClicked(pos)
 
-  console.log('onDown: pos', pos, 'clickedLineIdx', clickedLineIdx)
+  // console.log('onDown: pos', pos, 'clickedLineIdx', clickedLineIdx)
 
   if (clickedLineIdx < 0) {
     switchLine(clickedLineIdx)
     renderMeme()
     return
   }
+  const clickedLine = gMeme.lines[clickedLineIdx]
+  document.querySelector('.new-text-box').value = clickedLine.txt
 
   switchLine(clickedLineIdx)
   setLineDrag(true)
@@ -164,18 +166,6 @@ function markSelectedLine(line) {
   gElCtx.stroke()
   gElCtx.closePath()
 }
-
-
-// function renderLineValues(line) {
-//   const propsToIgnore = ['size', 'align', 'pos', 'isDrag']
-//   console.log(line)
-//   Object.keys(line).forEach((prop) => {
-//     if (!propsToIgnore.includes(prop)) {
-//       console.log(prop)
-//        document.querySelector(`.tools-bar [name="${prop}"]`).value = line[prop]
-//     }
-//   })
-// }
 
 function getElImgById(imgId) {
   return document.querySelector(`[src="assets/images/memes/${imgId}.jpg"]`)

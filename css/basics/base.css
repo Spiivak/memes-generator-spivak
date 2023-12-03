@@ -1,22 +1,22 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   font-family: roboto-regular;
-  background-color: #F8F8F8;
-  color: var(--ClrPriamyText);
-  height: 100dvh;
+  background-color: var(--color-neutral-n00);
+  height: 100vh;
   line-height: 1.714;
 }
 
 body {
   color: var(--color-neutral-n80);
   background-color: var(--color-neutral-n00);
-  height: 100dvh;
-  margin: 0;
-  height: 57rem;
+  height: 100vh;
   font-size: 0.875rem;
+  /* overflow-y: auto; */
 }
 
 button {
@@ -24,7 +24,7 @@ button {
   border-radius: 8px;
   text-align: center;
   cursor: pointer;
-  color: white;
+  /* color: white; */
   height: 25px;
   width: 25px;
 }

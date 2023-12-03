@@ -35,7 +35,7 @@
   color: var(--color-neutral-n80);
 
   border: 0.5px solid var(--color-neutral-n30);
-  ;}
+}
 
 .header-actions .github {
   width: 40px;

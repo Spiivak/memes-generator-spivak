@@ -8,7 +8,9 @@
   <title>Meme Generator</title>
 </head>
 
-<body class="main-layout" onload="onInit()">
+<body class="main-layout" onload="onInit()" data-theme="light">
+  <div class="modal-container" id="modalContainer"></div>
+
   <!-- HEADER SECTION -->
   <section class="main-header flex space-between align-center full">
 
@@ -16,25 +18,18 @@
     </a>
     
     <div class="links">
-      <ul class="main-nav-list flex clean-list">
-        <li class="gallery-page active"><a onclick="navigateTo('gallery')" href="#" id="gallery">Gallery</a></li>
-        <li class="editor-page hide"><a href="#">Editor</a></li>
-        <li class="saved-page"><a onclick="navigateTo('saved')" href="#">Saved</a></li>
-        <li class="about-page"><a onclick="navigateTo('about')" href="#">About</a></li>
+      <ul class="main-nav-list flex clean-list">      
+        <li class="gallery-page active"><a class="gallery-page" onclick="navigateTo('gallery')" href="#" id="gallery">Gallery</a></li>
+        <li class="editor-page hide"><a class="editor-page" href="#">Editor</a></li>
+        <li class="saved-page"><a class="saved-page" onclick="navigateTo('saved')" href="#">Saved</a></li>
+        <li class="about-page"><a class="about-page" onclick="navigateTo('about')" href="#">About</a></li>
       </ul>
     </div>
     <div class="header-actions">
       <button class="dark-mode toggle-theme" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i></button>
-      <button class="github"><a href="https://github.com/Spiivak/memes-generator-spivak"><i class="fa-brands fa-github"></i></a></button>
+      <button class="github"><a href="https://github.com/Spiivak/memes-generator-spivak" target="_blank"><i class="fa-brands fa-github"></i></a></button>
+      <button><i class="menu-bars fa-solid fa-bars hide"></i></button>
     </div>
-    <!-- <i class="menu-bars fa-solid fa-bars"></i> -->
-  </section>
-
-
-
-  <!-- ASIDE SECTION -->
-  <section class="aside-container flex justify-center">
-    <ul class="aside-nav-list clean-list aside-page"></ul>
   </section>
 
 
@@ -50,7 +45,7 @@
     </div>
     <div class="filter-box flex">
       <div title="Categories" class="categories"></div>
-      <input class="search-box" type="text" list="keywordsData" oninput="onKeyword(this.value)" placeholder="Search">
+      <input class="search-box" id="search-box" type="text" list="keywordsData" oninput="onKeyword(this.value)">
       <datalist id="keywordsData"></datalist>
    </div>
     <div class="gallery-layout"></div>
@@ -116,7 +111,7 @@
 
         <!-- Add / Change text  -->
         <div class="text-input">
-          <input type="text" placeholder="Enter a text" oninput="onSetText(this.value)" />
+          <input type="text" placeholder="Enter a text" class="new-text-box" oninput="onSetText(this.value)" />
         </div>
 
         <!-- End of Add/Change text -->
@@ -147,13 +142,13 @@
 
   <!-- SAVED SECTION -->
   <section class="saved-container hide"></section>
-  <img class="test-img" />
   <!-- ABOUT SECTION -->
   <section class="about-container hide"></section>
 
+
   <!-- FOOTER SECTION -->
   <section class="footer footer-layout flex justify-center align-center full">
-    Made without ❤️ by Eden Spivak
+    Made with ❤️ by Eden Spivak
   </section>
 
   <!-- JAVASCRIPT SECTION -->

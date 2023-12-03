@@ -1,43 +1,41 @@
-@media only screen and (max-width: 1335px) {
-  .gallery-container {
-    margin-bottom: 64px;
-  }
-}
 
-
-@media only screen and (max-width: 1000px) {
-  .gallery-container {
-    height: calc(100dvh + 190px);
-  }
-}
-
-@media only screen and (max-width: 1040px) {
+@media only screen and (max-width: 1285px) {
   .gallery-container { 
     grid-column: 1 / -1;
     padding: 32px;
-    height: calc(100dvh + 300px);
+    margin-right: 32px;
   }
+  
   .editor-container {
-    display: flex;
-    flex-direction: column;
+    grid-column: 1 / -1;
   }
 
   .canvas-container {
-    padding-right: 0;
+    padding: 32px;
   }
 
   canvas {
-    width: 25rem;
-    height: 25rem;
+    width: 30rem;
+    height: 30rem;
   }
   
   .canvas-actions {
-    width: 25rem;
-    padding: 16px;
+    width: 30rem;
+    height: 30rem;
   }
 
   .hero-section p {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .editor-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .gallery-container {
+    margin-right: 0;
   }
 }
 

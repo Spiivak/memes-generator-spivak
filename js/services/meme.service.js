@@ -59,12 +59,15 @@ function setFontFamily(fontFam) {
 
 function setAlign(align) {
 	if (gMeme.selectedLineIdx < 0) return
+	if (gMeme.lines[gMeme.selectedLineIdx].align === align) return
 	getSelectedLine().align = align
 	let x
 	if (align === 'left') x = 10
 	else if (align === 'center') x = gElCanvas.width / 2
 	else if (align === 'right') x = gElCanvas.width - 10
 	getSelectedLine().pos.x = x
+  showModal('success', `Text align changed to ${align}`)
+
 }
 
 function addLine(txt = '*meme text*') {
@@ -152,6 +155,7 @@ function deleteMeme(savedIdx) {
 }
 
 function getSelectedLine() {
+	if (gMeme.selectedLineIdx < 0) return
 	return gMeme.lines[gMeme.selectedLineIdx]
 }
 
