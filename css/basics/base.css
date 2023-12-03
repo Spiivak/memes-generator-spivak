@@ -6,13 +6,14 @@ html {
   font-family: roboto-regular;
   background-color: #F8F8F8;
   color: var(--ClrPriamyText);
-  /* height: 100dvh; */
+  height: 100dvh;
   line-height: 1.714;
 }
 
 body {
   color: var(--color-neutral-n80);
   background-color: var(--color-neutral-n00);
+  height: 100dvh;
   margin: 0;
   height: 57rem;
   font-size: 0.875rem;
@@ -28,9 +29,6 @@ button {
   width: 25px;
 }
 
-main {
-  height: 100%;
-}
 img {
   width: 100%;
 }

@@ -29,6 +29,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   align-content: flex-start;
-  height: calc(100vh - 128px);
+  /* height: calc(100vh - 128px); */
   gap: 8px;
 }
