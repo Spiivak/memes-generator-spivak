@@ -3,8 +3,10 @@
 .main-layout {
   display: grid;
   grid-template-columns: 128px 1fr;
-  grid-auto-rows: minmax(auto, 1fr);
-  height: calc(100vh + 105px);
+  grid-auto-rows: minmax(auto, 128px);
+  height: calc(100vh);
+  overflow-y: hidden;
+
 }
 
 .main-layout > *.full {
@@ -26,10 +28,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   align-content: flex-start;
-  height: calc(100vh - 105px);
+  /* height: 50vh; */
   gap: 8px;
 
-  /* padding: 64px; */
+  padding: 64px;
 }
 
 .saved-container {

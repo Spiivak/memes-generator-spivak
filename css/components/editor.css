@@ -1,6 +1,6 @@
 .editor {
-  width: 100vw;
-  height: calc(100vh - 130px);
+  width: calc(100vw - 20px);
+  height: calc(100vh - 310px);
   padding: 32px;
 }
 

@@ -3,6 +3,8 @@
   box-shadow: 1px 0px 0px 0px rgba(219, 219, 219, 1);
   padding: 16px;
   z-index: 3;
+
+  height: 100vh;
 }
 
 .aside-nav-list li {
