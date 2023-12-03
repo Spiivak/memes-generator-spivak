@@ -1,18 +1,18 @@
 
 function uploadMeme() {
-  const imgDataUrl = gElCanvas.toDataURL("image/jpeg");
-  doUploadImg(imgDataUrl, onSuccess);
+  const imgDataUrl = gElCanvas.toDataURL("image/jpeg")
+  doUploadImg(imgDataUrl, onSuccess)
 
   // A function to be called if request succeeds
   function onSuccess(uploadedImgUrl) {
       const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
       window.open(`https://www.facebook.com/sharer/sharer.php?u=${uploadedImgUrl}&t=${uploadedImgUrl}`)
-      // return false;
+      // return false
   }
 }
 
 function doUploadImg(imgDataUrl, onSuccess) {
-  const formData = new FormData();
+  const formData = new FormData()
   formData.append('img', imgDataUrl)
 
   fetch('//ca-upload.com/here/upload.php', {

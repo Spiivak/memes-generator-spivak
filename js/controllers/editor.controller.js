@@ -94,11 +94,11 @@ function onDeleteLine(){
 }
 
 function onToggleStroke() {
-  const meme = getMeme();
-  const selectedLine = meme.lines[meme.selectedLineIdx];
+  const meme = getMeme()
+  const selectedLine = meme.lines[meme.selectedLineIdx]
 
   // Toggle the value of the stroke property
-  selectedLine.stroke = !selectedLine.stroke;
+  selectedLine.stroke = !selectedLine.stroke
 
   // Render the meme to reflect the changes
   renderMeme()

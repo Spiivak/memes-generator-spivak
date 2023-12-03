@@ -48,42 +48,42 @@ function addEventListeners() {
 }
 
 function setLineSize(size) {
-  const currLine = getSelectedLine();
-  currLine.size = size;
+  const currLine = getSelectedLine()
+  currLine.size = size
 }
 
 function onDown(ev) {
-  const pos = getEvPos(ev);
-  const clickedLineIdx = isLineClicked(pos);
+  const pos = getEvPos(ev)
+  const clickedLineIdx = isLineClicked(pos)
 
-  console.log('onDown: pos', pos, 'clickedLineIdx', clickedLineIdx);
+  console.log('onDown: pos', pos, 'clickedLineIdx', clickedLineIdx)
 
   if (clickedLineIdx < 0) {
-    switchLine(clickedLineIdx);
-    renderMeme();
-    return;
+    switchLine(clickedLineIdx)
+    renderMeme()
+    return
   }
 
-  switchLine(clickedLineIdx);
-  setLineDrag(true);
-  gStartPos = pos;
-  gElCanvas.style.cursor = 'grabbing';
-  renderMeme();
+  switchLine(clickedLineIdx)
+  setLineDrag(true)
+  gStartPos = pos
+  gElCanvas.style.cursor = 'grabbing'
+  renderMeme()
 }
 
 function onMove(ev) {
-  const line = getSelectedLine();
-  if (!line || !line.isDrag) return;
+  const line = getSelectedLine()
+  if (!line || !line.isDrag) return
 
-  const pos = getEvPos(ev);
-  const dx = pos.x - gStartPos.x;
-  const dy = pos.y - gStartPos.y;
+  const pos = getEvPos(ev)
+  const dx = pos.x - gStartPos.x
+  const dy = pos.y - gStartPos.y
 
-  console.log('onMove: pos', pos, 'dx', dx, 'dy', dy);
+  console.log('onMove: pos', pos, 'dx', dx, 'dy', dy)
 
-  moveLine(dx, dy);
-  gStartPos = pos;
-  renderMeme();
+  moveLine(dx, dy)
+  gStartPos = pos
+  renderMeme()
 }
 
 function onUp() {
@@ -126,43 +126,43 @@ function drawLine({ pos: { x, y }, txt, size, fontFam, fillC, strokeC, align, st
   gElCtx.fillStyle = fillC
 
   if (!stroke) {
-    gElCtx.lineWidth = 4;
-    gElCtx.strokeStyle = strokeC;
-    gElCtx.strokeText(txt, x, y);
+    gElCtx.lineWidth = 4
+    gElCtx.strokeStyle = strokeC
+    gElCtx.strokeText(txt, x, y)
   }
 
-  gElCtx.fillText(txt, x, y);
+  gElCtx.fillText(txt, x, y)
 }
 
 function getFontMetrics(ctx) {
-  const font = ctx.font;
-  const textMetrics = ctx.measureText('M');
+  const font = ctx.font
+  const textMetrics = ctx.measureText('M')
   return {
     ascent: textMetrics.actualBoundingBoxAscent,
     descent: textMetrics.actualBoundingBoxDescent,
-  };
+  }
 }
 
 function markSelectedLine(line) {
-  const { pos: { x, y }, size, txt, align } = line;
-  const fontMetrics = getFontMetrics(gElCtx);
-  const lineHeight = fontMetrics.ascent + fontMetrics.descent + 20;
-  const lineWidth = gElCtx.measureText(txt).width;
+  const { pos: { x, y }, size, txt, align } = line
+  const fontMetrics = getFontMetrics(gElCtx)
+  const lineHeight = fontMetrics.ascent + fontMetrics.descent + 20
+  const lineWidth = gElCtx.measureText(txt).width
 
-  gElCtx.beginPath();
+  gElCtx.beginPath()
 
   if (align === 'left') {
-    gElCtx.rect(x, y - lineHeight / 2, lineWidth, lineHeight);
+    gElCtx.rect(x, y - lineHeight / 2, lineWidth, lineHeight)
   } else if (align === 'center') {
-    gElCtx.rect(x - lineWidth / 2, y - lineHeight / 2, lineWidth, lineHeight);
+    gElCtx.rect(x - lineWidth / 2, y - lineHeight / 2, lineWidth, lineHeight)
   } else if (align === 'right') {
-    gElCtx.rect(x - lineWidth, y - lineHeight / 2, lineWidth, lineHeight);
+    gElCtx.rect(x - lineWidth, y - lineHeight / 2, lineWidth, lineHeight)
   }
 
-  gElCtx.lineWidth = 2;
-  gElCtx.strokeStyle = 'rgb(15, 155, 180)';
-  gElCtx.stroke();
-  gElCtx.closePath();
+  gElCtx.lineWidth = 2
+  gElCtx.strokeStyle = 'rgb(15, 155, 180)'
+  gElCtx.stroke()
+  gElCtx.closePath()
 }
 
 

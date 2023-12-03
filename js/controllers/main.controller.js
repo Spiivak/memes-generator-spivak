@@ -6,28 +6,28 @@ function onInit() {
   initSaved()
   initEditor()
 }
-const pages = ['gallery', 'about', 'editor', 'saved', 'aside'];
+const pages = ['gallery', 'about', 'editor', 'saved', 'aside']
 
 function navigateTo(toPage) {
   pages.forEach(page => {
-    const pageContainer = document.querySelector(`.${page}-container`);
-    const pageLink = document.querySelector(`.${page}-page`);
-    const asideContainer = document.querySelector('.aside-container');
+    const pageContainer = document.querySelector(`.${page}-container`)
+    const pageLink = document.querySelector(`.${page}-page`)
+    const asideContainer = document.querySelector('.aside-container')
 
     if (pageContainer && pageLink) {
-      console.log('Toggling classes...');
-      pageContainer.classList.toggle('hide', page !== toPage);
-      pageLink.classList.toggle('active', page === toPage);
+      console.log('Toggling classes...')
+      pageContainer.classList.toggle('hide', page !== toPage)
+      pageLink.classList.toggle('active', page === toPage)
 
       // Show/hide the aside container based on the current page
       if (toPage === 'gallery') {
         resetMeme()
-        asideContainer.classList.remove('hide');
+        asideContainer.classList.remove('hide')
       } else {
-        asideContainer.classList.add('hide');
+        asideContainer.classList.add('hide')
       }
     }
-  });
+  })
 }
     // function navigateTo(toPage) {
     //   if(toPage === 'editor') {

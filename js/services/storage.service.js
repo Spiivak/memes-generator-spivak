@@ -6,11 +6,11 @@ function saveToStorage(key, val) {
 
 
 function loadFromStorage(key) {
-   var val = localStorage.getItem(key);
+   var val = localStorage.getItem(key)
    try {
-      return JSON.parse(val) || null;
+      return JSON.parse(val) || null
    } catch (error) {
-      console.error(`Error parsing data from storage: ${error.message}`);
-      return null;
+      console.error(`Error parsing data from storage: ${error.message}`)
+      return null
    }
 }

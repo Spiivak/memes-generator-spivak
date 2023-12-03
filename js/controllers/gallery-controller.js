@@ -22,7 +22,7 @@ function renderGallery(keyword) {
 
   document.querySelector('.gallery-container').innerHTML = imgsHTMLs.join('')
 
-  if (!keyword) document.querySelector('.search-line input').value = '';
+  if (!keyword) document.querySelector('.search-line input').value = ''
 
 }
 function renderKeywords() {
@@ -35,14 +35,14 @@ function renderKeywords() {
       datalistHTMLs += `<li onclick="onKeyword('${keyword.name}')"><a onclick="console.log(this)">${keyword.name}</a></li>`
       keywordsFilter.push(`<li onclick="onKeyword('${keyword.name}')"><a>${keyword.name}</a></li>`)
    })
-   document.querySelector('.aside-nav-list').innerHTML = datalistHTMLs;
+   document.querySelector('.aside-nav-list').innerHTML = datalistHTMLs
 }
 
 function onKeyword(keyword) {
-  updateKeywordCount(keyword);
-  document.querySelector('.search-line input').value = keyword;
-  renderKeywords();
-  renderGallery(keyword);
+  updateKeywordCount(keyword)
+  document.querySelector('.search-line input').value = keyword
+  renderKeywords()
+  renderGallery(keyword)
 }
 
 function onSelectImg(imgId) {
@@ -55,7 +55,7 @@ function onImgInput(ev) {
   loadImageFromInput(ev, DrawUploadedImg)
 }
 function DrawUploadedImg(img) {
-  document.querySelector('.test-img').src = img.src;
+  document.querySelector('.test-img').src = img.src
   onImgSelect(0)
 }
 function loadImageFromInput(ev, onImageReady) {
