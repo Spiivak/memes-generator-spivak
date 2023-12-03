@@ -12,14 +12,16 @@
   <!-- HEADER SECTION -->
   <section class="main-header flex space-between align-center full">
 
-    <img src="assets/images/logo/memegen-logo.png" alt="" class="logo" />
+    <a href="#gallery">
+      <img src="assets/images/logo/memegen-logo.png" alt="" class="logo" />
+    </a>
     <div class="search-line flex">
       <input type="text" list="keywordsData" oninput="onKeyword(this.value)" placeholder="Search">
       <datalist id="keywordsData"></datalist>
    </div>
     <div class="links">
       <ul class="main-nav-list flex clean-list">
-        <li class="gallery-page active"><a onclick="navigateTo('gallery')" href="#">Gallery</a></li>
+        <li class="gallery-page active"><a onclick="navigateTo('gallery')" href="#" id="gallery">Gallery</a></li>
         <li class="editor-page"><a href="#">Editor</a></li>
         <li class="saved-page"><a onclick="navigateTo('saved')" href="#">Saved</a></li>
         <li class="about-page"><a onclick="navigateTo('about')" href="#">About</a></li>
@@ -53,13 +55,13 @@
           <h2 class="edit-text-title">Edit Text Lines</h2>
           <div class="edit-text-actions flex align-center">
             <h3 class="lines-count"></h3>
-            <button class="switchline" onclick="onSwitchLine()">
+            <button title="Switch Line" class="switchline" onclick="onSwitchLine()">
               <i class="fa-solid fa-shuffle"></i>
             </button>
-            <button class="addline" onclick="onAddLine()">
+            <button title="Add Line" class="addline" onclick="onAddLine()">
               <i class="fa-regular fa-square-plus"></i>
             </button>
-            <button class="removeline" onclick="onDeleteLine()">
+            <button title="Remove Line" class="removeline" onclick="onDeleteLine()">
               <i class="fa-regular fa-square-minus"></i>
             </button>
           </div>
@@ -67,9 +69,9 @@
 
         <div class="text-actions flex space-evenly">
           <!-- Font Family are rendered though JS -->
-          <div class="font-family"></div>
+          <div title="Font Family" class="font-family"></div>
           <!-- Font Sizes are rendered though JS -->
-          <div class="font-size"></div>
+          <div title="Font Size" class="font-size"></div>
 
           <!-- TEXT ALIGN SERVICE -->
           <div class="align-text">
@@ -86,10 +88,10 @@
 
           <!-- SHAPE SERVICE -->
           <div class="shape">
-            <button onclick="onToggleStroke()" class="stroke-toggle">
+            <button title="Toggle Stroke" onclick="onToggleStroke()" class="stroke-toggle">
               <i class="fa-solid fa-font"></i>
             </button>
-            <button onclick="openColorPallete()" class="color-pallete">
+            <button title="Color Pallete" onclick="openColorPallete()" class="color-pallete">
               <i class="fa-solid fa-paintbrush"></i>
             </button>
           </div>
@@ -106,20 +108,22 @@
 
         <div class="stickers flex justify-center">
           <h2>Stickers</h2>
-          <div class="stickers-container"></div>
+          <div class="stickers-container">
+            <p>Coming Soon</p>
+          </div>
         </div>
 
         <!-- Download, Share, Save Actions -->
         <!-- End of canvas actions -->
       </div>
       <div class="download-save-share flex space-between align-end">
-        <button>
+        <button title="Download Meme">
           <a href="#" class="btn" onclick="onDownloadMeme(this)" download="my-img.jpg">Download</a>
-        </button>
+        </button title="Save Meme">
         <button class="save" onclick="onSaveMeme()">
           Save
         </button>
-        <button class="share" onclick="onUploadMeme(this)">
+        <button title="Share on Facebook" class="share" onclick="onUploadMeme(this)">
           Share
         </button>
       </div>
