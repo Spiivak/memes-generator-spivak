@@ -1,14 +1,9 @@
-.editor {
-  width: calc(100vw - 20px);
-  height: calc(100vh - 310px);
-  padding: 32px;
-}
-
 .canvas-actions {
-  background-color: white;
-  height: 500px; 
-  width: 500px;
+  background-color: var(--color-neutral-n02);
+  height: 31.25rem; 
+  width: 31.25rem;
   border-radius: 16px;
+  box-shadow: 4px 5px 20px 0px #00000030;
 }
 
 .main-actions {
@@ -18,17 +13,14 @@
 /* EDIT TEXT TOP SECTION */
 
 .edit-text {
-  color: #727272;
+  color: var(--color-neutral-n80);
   height: 28px;
   align-items: center;
+
 }
 
 .edit-text-actions button {
   margin-left: 4px;
-}
-
-.add-line:hover {
-  background-color: green;
 }
 
 .edit-text-title {
@@ -36,43 +28,48 @@
   font-family: roboto-regular;
   font-size: 24px;
   line-height: 28.13px;
-  color: #727272;
+  color: var(--color-neutral-n80);
+}
+
+.lines-count {
+  color: var(--color-neutral-n80);
+  margin-right: 16px;
 }
 
 /* Add Line */
 
-.addline {
-  background-color: #7ABD7E;
-  transition: background-color 0.2s ease-in-out;
+.btn-add-line {
+  background-color: var(--color-poly-g40);
+  transition: all 0.2s ease-in-out;
 }
 
-.addline:hover {
-  background-color: darkgreen;
+.btn-add-line:hover {
+  background-color: var(--color-poly-g50);
 }
 
 /* Remove Line */
-.removeline {
-  background-color: #FF6961;
-  transition: background-color 0.2s ease-in-out;
+.btn-remove-line {
+  background-color: var(--color-poly-o50);
+  transition: all 0.2s ease-in-out;
 }
 
-.removeline:hover {
-  background-color: red;
+.btn-remove-line:hover {
+  background-color: var(--color-poly-r60);
 }
 
 /* Switch Text */
 
-.switchline  {
-  background-color: #FFB54C;
-  transition: background-color 0.2s ease-in-out;
+.btn-switch-line  {
+  background-color: var(--color-brand-b50);
+  transition: all 0.2s ease-in-out;
 }
 
-.switchline:hover,
+.btn-switch-line:hover,
 .stroke-toggle:hover,
 .color-pallete:hover,
 .align-text button:hover,
 .download-save-share button:hover  {
-  background-color: darkorange;
+  background-color: var(--color-brand-b60);
 }
 
 
@@ -83,56 +80,51 @@
   border-top-right-radius: 16px;
   border-top-left-radius: 16px;
   margin-top: 16px;
-  background-color: #F8F8F8;
+  background-color: var(--color-neutral-n10);
   padding: 20px 10px;
 }
 
 /* font family box */
 #font-family {
-  /* width: 160px; */
-  background-color: #FFB54C;
+  background-color: var(--color-brand-b50);
   border: 0;
   border-radius: 8px;
   color: #fff;
-  width: 100px;
+  width: 100%;
   height: 100%;
   text-indent: 8px;
-
-  /* font-family: roboto-medium; */
   font-weight: 600;
-  /* letter-spacing: 2px; */
 }
 
 #font-size {
   font-weight: 600;
-  /* font-family: roboto-medium; */
-  background-color: #FFB54C;
+  background-color: var(--color-brand-b50);
   border: 0;
   border-radius: 8px;
-  color: #fff;
+  color: var(--color-neutral-n00);
 
   height: 100%;
   text-indent: 4px;
 }
 
 #font-family:hover, #font-size:hover {
-  background-color: darkorange;
+  background-color: var(--color-brand-b60);
 }
 
 /* align text & switch line */
 .align-text button {
-  background-color: #FFB54C;
+  background-color: var(--color-brand-b50);
   transition: background-color 0.2s ease-in-out;
 }
 
 /* stroke */
 .stroke-toggle {
-  background-color: #FFB54C;
+  background-color: var(--color-brand-b50);
 }
 
 /* color pallete */
 .color-pallete {
-  background-color: #FFB54C;
+  background-color: var(--color-brand-b50);
 }
 
 /* New Text Box */
@@ -140,7 +132,7 @@
   width: 100%;
   height: 66px;
   border: none;
-  background: #F8F8F8;
+  background: var(--color-neutral-n10);
   text-indent: 32px;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
@@ -150,7 +142,7 @@
 /* STICKERS SECTION */
 
 .stickers {
-  background-color: #F8F8F8;
+  background-color: var(--color-neutral-n10);
   border-radius: 16px;
   height: 80%;
   margin-top: 16px;
@@ -163,14 +155,14 @@
 /* DOWNLOAD SAVE & SHARE BUTTONS */
 .download-save-share button {
   width: calc(100% / 3);
-  background-color: orange;
+  background-color: var(--color-brand-b50);
   cursor: pointer;
   border-radius: 0;
 
   height: 50px;
   border: none;
 
-  transition: background-color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .download-save-share button:last-child {
   border-bottom-right-radius: 16px;

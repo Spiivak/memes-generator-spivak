@@ -1,0 +1,38 @@
+.filter-box {
+  background-color: var(--color-neutral-n00);
+  padding: 10px;
+  height: 61px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+
+  border: 0.5px solid var(--color-neutral-n30);
+}
+
+.search-box {
+  width: 100%;
+  text-indent: 16px;
+  margin-left: 16px;
+  background-color: var(--color-neutral-n02);
+  color: var(--color-neutral-n80);
+  border: none;
+  border-radius: 8px;
+}
+
+
+.categories {
+  background-color: var(--color-neutral-n10);
+  width: 171px;
+  height: 100%;
+  border-radius: 4px;
+  
+  padding: 8px;
+}
+
+.categories select {
+  width: 100%;
+  height: 100%;
+  color: var(--color-neutral-n80);
+  background-color: var(--color-neutral-n10);
+  border: none;
+  text-indent: 8px;
+}

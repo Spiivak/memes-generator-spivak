@@ -1,94 +1,25 @@
-@media only screen and (max-width: 1040px) {
-
-  .main-layout {
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-    /* background-color: red; */
-    /* height: calc(100vh); */
-  }
-
-  .main-header {
-    position: fixed;
-    top: 0;
-  }
-
+@media only screen and (max-width: 1335px) {
   .gallery-container {
-    flex-wrap: wrap;
-    padding-block-start: 96px;
-  }
-
-  .aside-container {
-    /* grid-column: 1 / -1; */
-    width: 100%;
-  }
-
-  .aside-nav-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-
+    margin-bottom: 64px;
   }
 }
-
-@media only screen and (max-width: 670px) {
-  .main-layout {
-    height: calc(100vh + 600px);
-    /* background-color: red; */
-  }
-}
-
-
-@media only screen and (max-width: 768px) {
-  .editor-container { 
-    height: 100vh;
-  /* background: red; */
-  /* margin-top: 32px; */
-  }
-
-  canvas {
-    margin-top: 96px;
-  }
-
-  .aside-container {
-    position: fixed;
-    top: 65;
-    height: 65px;
-    grid-column: 1 / -1;
-  }
-  .gallery-container {
-    padding-block-start: 152px;
-  }
-  .main-header .links {
-    display: none;
-  }
-
-  .main-header {
-    position: fixed;
-    top: 0;
-    height: 65px;
-    padding: 0 16px;
-
-  }
-
-  .menu-bars {
-    /* background-color: black; */
-    visibility: visible;
-    font-size: 24px;
-  }
-}
-
-
 
 
 @media only screen and (max-width: 1000px) {
-  .editor-container {
-    display: grid;
-    padding: 16px;
+  .gallery-container {
+    height: calc(100dvh + 190px);
+  }
+}
 
-    /* overflow-y: scroll; */
-    /* overflow-x: hidden; */
+@media only screen and (max-width: 1040px) {
+  .gallery-container { 
+    grid-column: 1 / -1;
+    padding: 32px;
+    height: calc(100dvh + 300px);
+  }
+  .editor-container {
+    display: flex;
+    flex-direction: column;
   }
 
   .canvas-container {
@@ -96,13 +27,72 @@
   }
 
   canvas {
-    width: 400px;
-    height: 400px;
+    width: 25rem;
+    height: 25rem;
   }
-
+  
   .canvas-actions {
-    width: 400px;
+    width: 25rem;
     padding: 16px;
   }
 
+  .hero-section p {
+    width: 100%;
+  }
 }
+
+@media only screen and (max-width: 805) {
+  .gallery-container { 
+    padding: 32px;
+    height: calc(100dvh + 300px);
+  }
+  .hero-section p {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 646px) {
+  .editor-container { 
+    padding: 16px;
+    grid-column: 1 / -1;
+  }
+
+  .download-save-share button {
+    width: 100px;
+    background-color: var(--color-brand-b50);
+    cursor: pointer;
+    border-radius: 0;
+  
+    height: 50px;
+    border: none;
+
+    border-radius: 25px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .hero-section p {
+    width: 100%;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  canvas {
+    margin-top: 32px;
+  }
+
+  .main-header .links {
+    display: none;
+  }
+
+  .main-header {
+    position: sticky;
+    top: 0;
+    height: 65px;
+    padding: 0 16px;
+
+  }
+}
+
+
+

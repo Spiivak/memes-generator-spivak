@@ -54,7 +54,3 @@
 .active {
   color: var(--primaryClr);
 }
-
-.menu-bars {
-  visibility: hidden;
-}

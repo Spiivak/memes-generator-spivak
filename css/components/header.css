@@ -1,20 +1,15 @@
 .main-header {
-  max-height: 65px;
-  /* min-height: 65px; */
   padding: 16px 136px;
-  background-color: #fff;
-  box-shadow: 0px 1px 0px 0px rgba(219, 219, 219, 1);
-  z-index: 2;
+  background-color: var(--color-neutral-n02);
+  box-shadow: 4px 5px 20px 0px #00000030;
 
-  
-  /* position: sticky; */
-  /* top: 0; */
   width: 100%;
 }
 
 .main-header .logo {
   width: 152px;
   height: 32px;
+  cursor: pointer;
 }
 
 .main-header .main-nav-list a {
@@ -31,5 +26,21 @@
 
 
 .main-header .main-nav-list a:hover {
-  color: var(--primaryClr);
+  color: var(--color-poly-o50);
+}
+
+.header-actions .dark-mode {
+  width: 40px;
+  height: 36px;
+  color: var(--color-neutral-n80);
+
+  border: 0.5px solid var(--color-neutral-n30);
+  ;}
+
+.header-actions .github {
+  width: 40px;
+  height: 36px;
+  color: var(--color-neutral-n80);
+
+  border: 0.5px solid var(--color-neutral-n30);
 }

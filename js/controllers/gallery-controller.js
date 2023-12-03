@@ -20,27 +20,28 @@ function renderGallery(keyword) {
   <button class="upload-image"><i class="fa-solid fa-plus"></i></button>
 </div>`)
 
-  document.querySelector('.gallery-container').innerHTML = imgsHTMLs.join('')
+  document.querySelector('.gallery-layout').innerHTML = imgsHTMLs.join('')
 
-  if (!keyword) document.querySelector('.search-line input').value = ''
+  if (!keyword) document.querySelector('.search-box').value = ''
 
 }
+
 function renderKeywords() {
-   const keywordsSet = getKeywords()
+  const keywordsSet = getKeywords();
+  let datalistHTMLs = '<select onchange="onKeyword(this.value)"><option value="">All</option>'
 
-   let datalistHTMLs = '<li class="all-btn" onclick="renderGallery()"><a>All</a></li>'
-   let keywordsFilter = []
+  keywordsSet.forEach(keyword => {
+    datalistHTMLs += `<option value="${keyword.name.toLowerCase()}">${keyword.name}</option>`
+  })
 
-   keywordsSet.forEach(keyword => {
-      datalistHTMLs += `<li onclick="onKeyword('${keyword.name}')"><a onclick="console.log(this)">${keyword.name}</a></li>`
-      keywordsFilter.push(`<li onclick="onKeyword('${keyword.name}')"><a>${keyword.name}</a></li>`)
-   })
-   document.querySelector('.aside-nav-list').innerHTML = datalistHTMLs
+  datalistHTMLs += '</select>'
+
+  document.querySelector('.categories').innerHTML = datalistHTMLs
 }
 
 function onKeyword(keyword) {
   updateKeywordCount(keyword)
-  document.querySelector('.search-line input').value = keyword
+  document.querySelector('.search-box').value = keyword
   renderKeywords()
   renderGallery(keyword)
 }

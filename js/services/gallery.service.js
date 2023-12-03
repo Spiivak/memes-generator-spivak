@@ -77,6 +77,7 @@ function updateKeywordCount(keywordSearched) {
 
 function getImagesToShow(keyword) {
   if (!keyword) return gImgs
+  console.log('keyword', keyword)
   return gImgs.filter(img => {
     const regex = new RegExp('^' + keyword, 'm')
     return img.keywords.find(keyword => keyword.match(regex))

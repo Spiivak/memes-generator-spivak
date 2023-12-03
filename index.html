@@ -12,23 +12,22 @@
   <!-- HEADER SECTION -->
   <section class="main-header flex space-between align-center full">
 
-    <a href="#gallery">
-      <img src="assets/images/logo/memegen-logo.png" alt="" class="logo" />
+      <img onclick="navigateTo('gallery')" src="assets/images/logo/memegen-logo.png" alt="" class="logo">
     </a>
-    <div class="search-line flex">
-      <input type="text" list="keywordsData" oninput="onKeyword(this.value)" placeholder="Search">
-      <datalist id="keywordsData"></datalist>
-   </div>
+    
     <div class="links">
       <ul class="main-nav-list flex clean-list">
         <li class="gallery-page active"><a onclick="navigateTo('gallery')" href="#" id="gallery">Gallery</a></li>
-        <li class="editor-page"><a href="#">Editor</a></li>
+        <li class="editor-page hide"><a href="#">Editor</a></li>
         <li class="saved-page"><a onclick="navigateTo('saved')" href="#">Saved</a></li>
         <li class="about-page"><a onclick="navigateTo('about')" href="#">About</a></li>
       </ul>
-      
     </div>
-    <i class="menu-bars fa-solid fa-bars"></i>
+    <div class="header-actions">
+      <button class="dark-mode toggle-theme" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i></button>
+      <button class="github"><i class="fa-brands fa-github"></i></button>
+    </div>
+    <!-- <i class="menu-bars fa-solid fa-bars"></i> -->
   </section>
 
 
@@ -38,8 +37,24 @@
     <ul class="aside-nav-list clean-list aside-page"></ul>
   </section>
 
+
   <!-- GALLERY VIEW SECTION -->
-  <section class="gallery-container gallery-layout"></section>
+  <section class="gallery-container">
+    <div class="hero-section flex column">
+      <div class="anouncement flex">
+        <div class="tag">New</div>
+        <span>Released Project</span>
+      </div>
+      <h1>Simply Delightful Memes Generator</h1>
+      <p>Lorem ipsum dolor sit amet consectetur. Ut tristique in tristique pharetra velit nunc aliquam pharetra accumsan. A convallis porttitor non pharetra id ultrices. Turpis odio ut pellentesque.</p>
+    </div>
+    <div class="filter-box flex">
+      <div title="Categories" class="categories"></div>
+      <input class="search-box" type="text" list="keywordsData" oninput="onKeyword(this.value)" placeholder="Search">
+      <datalist id="keywordsData"></datalist>
+   </div>
+    <div class="gallery-layout"></div>
+  </section>
 
   <!-- EDITOR SECTION -->
   <section class="editor-container editor flex justify-center align-center hide">
@@ -55,13 +70,13 @@
           <h2 class="edit-text-title">Edit Text Lines</h2>
           <div class="edit-text-actions flex align-center">
             <h3 class="lines-count"></h3>
-            <button title="Switch Line" class="switchline" onclick="onSwitchLine()">
+            <button title="Switch Line" class="btn-switch-line" onclick="onSwitchLine()">
               <i class="fa-solid fa-shuffle"></i>
             </button>
-            <button title="Add Line" class="addline" onclick="onAddLine()">
+            <button title="Add Line" class="btn-add-line" onclick="onAddLine()">
               <i class="fa-regular fa-square-plus"></i>
             </button>
-            <button title="Remove Line" class="removeline" onclick="onDeleteLine()">
+            <button title="Remove Line" class="btn-remove-line" onclick="onDeleteLine()">
               <i class="fa-regular fa-square-minus"></i>
             </button>
           </div>

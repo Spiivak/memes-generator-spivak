@@ -6,18 +6,20 @@ html {
   font-family: roboto-regular;
   background-color: #F8F8F8;
   color: var(--ClrPriamyText);
+  /* height: 100dvh; */
   line-height: 1.714;
 }
 
 body {
+  color: var(--color-neutral-n80);
+  background-color: var(--color-neutral-n00);
   margin: 0;
-  /* height: 100vh; */
+  height: 57rem;
   font-size: 0.875rem;
-  /* overflow-y: hidden; */
 }
 
 button {
-  all:unset;
+  all: unset;
   border-radius: 8px;
   text-align: center;
   cursor: pointer;
