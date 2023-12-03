@@ -48,9 +48,13 @@
 /* HIDE */
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .active {
   color: var(--primaryClr);
+}
+
+.menu-bars {
+  visibility: hidden;
 }

@@ -1,15 +1,14 @@
 .editor {
   width: 100vw;
-  height: calc(100vh - 130px)
+  height: calc(100vh - 130px);
+  padding: 32px;
 }
 
 .canvas-actions {
   background-color: white;
   height: 500px; 
-  /* height will get removed once generating the stickers */
   width: 500px;
   border-radius: 16px;
-  /* padding: 32px; */
 }
 
 .main-actions {

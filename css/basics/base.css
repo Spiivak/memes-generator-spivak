@@ -7,13 +7,11 @@ html {
   background-color: #F8F8F8;
   color: var(--ClrPriamyText);
   line-height: 1.714;
-  /* overflow-x: hidden; */
-  overflow-y: hidden;
 }
 
 body {
   margin: 0;
-  height: 100dvh;
+  /* height: 100vh; */
   font-size: 0.875rem;
 }
 
