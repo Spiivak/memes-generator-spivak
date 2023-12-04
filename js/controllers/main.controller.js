@@ -37,6 +37,7 @@ function navigateTo(toPage) {
     if (container && pageLink) {
       container.classList.toggle('hide', page !== toPage)
       pageLink.classList.toggle('active', page === toPage)
+      resetMeme()
     } else {
       console.error(`Element with class '${page}-container' or '${page}-page' not found.`)
     }
