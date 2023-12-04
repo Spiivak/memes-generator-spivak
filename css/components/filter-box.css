@@ -18,6 +18,10 @@
   border-radius: 8px;
 }
 
+.search-box:focus {
+  outline: 0.5px solid var(--color-neutral-n30);
+  background-color: var(--color-neutral-n10);
+}
 
 .categories {
   background-color: var(--color-neutral-n10);
