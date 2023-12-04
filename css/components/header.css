@@ -44,7 +44,11 @@
 .header-actions .github {
   width: 40px;
   height: 36px;
-  color: var(--color-neutral-n80);
+  /* color: var(--color-neutral-n80); */
 
   border: 0.5px solid var(--color-neutral-n30);
+}
+
+.header-actions .github a {
+  color: var(--color-neutral-n80);
 }
