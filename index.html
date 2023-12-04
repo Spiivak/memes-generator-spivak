@@ -22,7 +22,7 @@
         <li class="gallery-page active"><a class="gallery-page" onclick="navigateTo('gallery')" href="#" id="gallery">Gallery</a></li>
         <li class="editor-page hide"><a class="editor-page" href="#">Editor</a></li>
         <li class="saved-page"><a class="saved-page" onclick="navigateTo('saved')" href="#">Saved</a></li>
-        <li class="about-page"><a class="about-page" onclick="navigateTo('about')" href="#">About</a></li>
+        <li class="about-page"><a class="about-page" onclick="showModal('error', 'This page is coming soon..')" href="#">About</a></li>
       </ul>
     </div>
     <div class="header-actions">
@@ -116,13 +116,13 @@
 
         <!-- End of Add/Change text -->
 
-        <div class="stickers flex justify-center">
+        <div class="stickers flex column justify-center align-center">
           <h2>Stickers</h2>
-          <div class="stickers-container">
-            <p>Coming Soon</p>
+          <p>Coming Soon</p>
+          <div class="stickers-container flex column">
           </div>
-        </div>
 
+        </div>
         <!-- Download, Share, Save Actions -->
         <!-- End of canvas actions -->
       </div>

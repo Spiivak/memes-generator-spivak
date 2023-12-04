@@ -18,7 +18,7 @@ function renderGallery(keyword) {
 
   if (!imgs.length) imgsHTMLs = ['<p>No results found...</p>']
   imgsHTMLs.unshift(`<div class="upload-card file-input flex justify-center align-center">
-  <button onclick="createUploadButton()" class="upload-image"><i class="fa-solid fa-plus"></i></button>
+  <button onclick="showModal('error', 'This feature is coming soon..')" class="upload-image"><i class="fa-solid fa-plus"></i></button>
 </div>`)
 
   document.querySelector('.gallery-layout').innerHTML = imgsHTMLs.join('')

@@ -40,4 +40,8 @@
 .modal-close {
   cursor: pointer;
   font-weight: bold;
+
+  position: relative;
+  top: 0;
+  right: -90px;
 }

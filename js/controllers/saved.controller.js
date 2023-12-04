@@ -11,10 +11,12 @@ function renderSaved() {
   let savedHTMLs = []
   if (!memesDB.length) savedHTMLs = ['<p>No saved photos to show</p>']
   else savedHTMLs = memesDB.map((memeData, i) => `
-  <div class="gallery-img">
-  <img src="${memeData}" onclick="onOpenSaved(this.src)">
+  <div class="gallery-img" onclick="showModal('error', 'This feature is coming soon..')">
+  <img src="${memeData}" > 
   <button class="delete-saved-btn" onclick="onDeleteSaved(${i})"><i class="fa-solid fa-trash-can"></i></button>
   </div>`)
+
+  // onclick="onOpenSaved(this.src)"
   document.querySelector('.saved-container').innerHTML = savedHTMLs.join('')
 }
 
