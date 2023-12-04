@@ -186,13 +186,17 @@
   cursor: pointer;
   border-radius: 0;
 
-  text-decoration: none;
-
   height: 50px;
   border: none;
 
   transition: all 0.3s ease-in-out;
 }
+
+.download-save-share a {
+  text-decoration: none;
+  color: var(--color-neutral-n00);
+}
+
 .download-save-share button:last-child {
   border-bottom-right-radius: 16px;
 }
